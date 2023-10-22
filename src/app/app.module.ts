@@ -10,9 +10,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ToolbarHeaderComponent } from './components/toolbar-header/toolbar-header.component';
-import { ToolbarFooterComponent } from './components/toolbar-footer/toolbar-footer.component';
-import { SidenavMenuComponent } from './components/sidenav-menu/sidenav-menu.component';
+import { ToolbarHeaderComponent } from './shared/components/toolbar-header/toolbar-header.component';
+import { ToolbarFooterComponent } from './shared/components/toolbar-footer/toolbar-footer.component';
+import { SidenavMenuComponent } from './shared/components/sidenav-menu/sidenav-menu.component';
 import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({

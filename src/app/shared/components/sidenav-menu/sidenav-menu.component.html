@@ -1,0 +1,22 @@
+<mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #sidenav mode="side" class="sidenav"
+                 [fixedInViewport]="false" [fixedTopGap]="0"
+                 [fixedBottomGap]="0" [opened]="sidenavOpened">
+                 <p>Auto-resizing sidenav</p>
+                 <p>Auto-resizing sidenav</p>
+                 <p>Auto-resizing sidenav</p>
+                 <p>Auto-resizing sidenav</p>
+                 <p>Auto-resizing sidenav</p>
+    </mat-sidenav>
+    
+    <mat-sidenav-content class="sidenav-content">
+        
+        <div class="routed-content">
+            <ng-content></ng-content>
+        </div>
+        <app-toolbar-footer></app-toolbar-footer>
+
+    </mat-sidenav-content>
+    
+</mat-sidenav-container>

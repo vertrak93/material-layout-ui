@@ -1,7 +1,9 @@
-<app-toolbar-header></app-toolbar-header>
+<ng-container class="layout-container" >
 
-<app-sidenav-menu>
-  <router-outlet></router-outlet>
-</app-sidenav-menu>
+  <app-toolbar-header class="header"></app-toolbar-header>
 
-<app-toolbar-footer></app-toolbar-footer>
+  <app-sidenav-menu class="sidenav">
+    <router-outlet></router-outlet>
+  </app-sidenav-menu>
+
+</ng-container>
