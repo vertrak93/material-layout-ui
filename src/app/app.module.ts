@@ -7,6 +7,9 @@ import { MatIconModule } from "@angular/material/icon";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTreeModule} from '@angular/material/tree';
+import { MatListModule } from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +17,7 @@ import { ToolbarHeaderComponent } from './shared/components/toolbar-header/toolb
 import { ToolbarFooterComponent } from './shared/components/toolbar-footer/toolbar-footer.component';
 import { SidenavMenuComponent } from './shared/components/sidenav-menu/sidenav-menu.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SideNavigationMenuComponent } from './shared/components/side-navigation-menu/side-navigation-menu.component';
 
 @NgModule({
   declarations: [
@@ -21,17 +25,22 @@ import { HomeComponent } from './pages/home/home.component';
     ToolbarHeaderComponent,
     ToolbarFooterComponent,
     SidenavMenuComponent,
-    HomeComponent
+    HomeComponent,
+    SideNavigationMenuComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    
     MatButtonModule,
     MatIconModule,
     MatCardModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatMenuModule,
+    MatTreeModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

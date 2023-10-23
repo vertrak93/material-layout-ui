@@ -9,10 +9,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15.625rem;
+    width: 220px;
     -webkit-box-shadow: 1px 0px 5px -1px rgba(143,143,143,1);
     -moz-box-shadow: 1px 0px 5px -1px rgba(143,143,143,1);
     box-shadow: 1px 0px 5px -1px rgba(143,143,143,1);
+    background-color: rgb(49, 51, 63);
+    color: white;
 }
 
 .sidenav-content{

@@ -7,13 +7,20 @@
 
         <span class="header-title">Ventas</span>
         <span class="flex-fill"></span>
-        <button mat-icon-button>
-            <mat-icon>favorite</mat-icon>
-        </button>
-        
-        <button mat-icon-button>
-            <mat-icon>share</mat-icon>
-        </button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <span disabled mat-menu-item>username</span>
+            <button mat-menu-item>
+              <mat-icon>settings</mat-icon>
+              <span>Configuración</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>logout</mat-icon>
+              <span>Salir</span>
+            </button>
+          </mat-menu>
         
     </mat-toolbar>
 </header>

@@ -1,13 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
 
-    <mat-sidenav #sidenav mode="side" class="sidenav"
-                 [fixedInViewport]="false" [fixedTopGap]="0"
-                 [fixedBottomGap]="0" [opened]="sidenavOpened">
-                 <p>Auto-resizing sidenav</p>
-                 <p>Auto-resizing sidenav</p>
-                 <p>Auto-resizing sidenav</p>
-                 <p>Auto-resizing sidenav</p>
-                 <p>Auto-resizing sidenav</p>
+    <mat-sidenav #sidenav [mode]="mode" class="sidenav" [opened]="sidenavOpened">
+                 <app-side-navigation-menu></app-side-navigation-menu>
     </mat-sidenav>
     
     <mat-sidenav-content class="sidenav-content">

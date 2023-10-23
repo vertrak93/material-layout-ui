@@ -17,4 +17,9 @@ export class AppControlService {
   getSideNavMenuOpened(){
     return this.sideNavMenuOpened.asObservable();
   }
+
+  setSideNavMenuOpened(value:boolean){
+    this.sideNavMenuOpened.next(value);
+  }
+
 }
