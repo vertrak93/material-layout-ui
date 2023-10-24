@@ -1,13 +1,17 @@
+.nav-expansion-panel{
+    border-radius: none;
+    border-bottom: 1px solid rgb(66, 66, 66);
+}
+
+.nav-expansion-panel, .nav-menu-item{
+    background-color: rgb(49, 51, 63);
+    color: white;
+    font-size: 1rem;
+}
+
 .nav-menu-item{
     display: flex;
     align-items: center;
-    //justify-content: center;
-    color: white;
-    
-}
-
-.a-menu{
-    border-bottom: 1px solid rgb(66, 66, 66);
 }
 
 .nav-menu-text{
@@ -15,6 +19,14 @@
     font-weight:500;
 }
 
-.nav-menu-icon{
-    
+.nav-a-menu{
+    border-bottom: 1px solid rgb(66, 66, 66);
+    padding-left: 1.5rem;
 }
+
+::ng-deep .mat-expansion-indicator::after, 
+.mat-expansion-panel-header-description{
+    color: white !important;
+}
+
+
