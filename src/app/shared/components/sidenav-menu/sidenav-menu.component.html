@@ -6,6 +6,13 @@
     
     <mat-sidenav-content class="sidenav-content">
         
+        <div class="site-map">
+            <mat-icon class="site-map-icon">account_tree</mat-icon> 
+            <a class="site-map-item" href="#">Parent</a>
+            <span class="site-map-item">&nbsp;>&nbsp;</span>
+            <a class="site-map-item" href="#">Child</a>
+        </div>
+
         <div class="routed-content">
             <ng-content></ng-content>
         </div>

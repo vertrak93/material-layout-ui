@@ -1,3 +1,5 @@
+@import 'src/styles.scss';
+
 .sidenav-container{
     height: 100%;
     overflow: hidden;
@@ -9,11 +11,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 240px;
-    -webkit-box-shadow: 1px 0px 5px -1px rgba(143,143,143,1);
-    -moz-box-shadow: 1px 0px 5px -1px rgba(143,143,143,1);
-    box-shadow: 1px 0px 5px -1px rgba(143,143,143,1);
-    background-color: rgb(49, 51, 63);
+    width: 250px;
+    background-color: $dark-gray;
     color: white;
 }
 
@@ -26,4 +25,26 @@
 
 .routed-content{
     flex: 1;
+}
+
+.site-map{
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 12px;
+}
+
+.site-map-item{
+    padding: 1px;
+    color: $gray;
+    font-weight: 500;
+}
+
+.site-map-icon{
+    color: $gray;
+    padding-right: 2px;
+    font-size: 18px;
+    height: auto;
+    width: auto;
 }

@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
-
-
+import { sitemap } from 'src/app/app-navigation'
 
 @Component({
   selector: 'app-side-navigation-menu',
@@ -10,8 +8,10 @@ import { Component } from '@angular/core';
 })
 export class SideNavigationMenuComponent {
 
-  constructor(){
+  constructor(){}
 
+  get siteMapItems(){
+    return sitemap;
   }
 
 }

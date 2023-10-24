@@ -1,37 +1,40 @@
 <mat-nav-list>
 
-  <a mat-list-item [routerLink]="['/detail']" class="nav-a-menu" *ngIf="true">
-    <div class="nav-menu-item">
-      <mat-icon class="nav-menu-icon">home</mat-icon>
-      <span class="nav-menu-text"> Inicio</span>
-    </div>
-  </a>
 
-  <mat-expansion-panel mat-list-item class="nav-expansion-panel" [class.mat-elevation-z0]="true">
-    <mat-expansion-panel-header class="nav-menu-item">
+  <div *ngFor="let item of siteMapItems">
 
-        <mat-icon>home</mat-icon>
-        <span class="nav-menu-text"> Inicio</span>
+    <a mat-list-item [routerLink]="['{{item.route}}']" class="nav-a-menu" *ngIf="!item.children">
+      <div class="nav-menu-item">
+        <mat-icon class="nav-menu-icon">{{item.icon}}</mat-icon>
+        <span class="nav-menu-text">{{item.title}}</span>
+      </div>
+    </a>
+
+    <mat-expansion-panel mat-list-item class="nav-expansion-panel" [class.mat-elevation-z0]="true" *ngIf="item.children">
+      <mat-expansion-panel-header class="nav-menu-item">
+  
+          <mat-icon>{{item.icon}}</mat-icon>
+          <span class="nav-menu-text">{{item.title}}</span>
+        
+      </mat-expansion-panel-header>
       
-    </mat-expansion-panel-header>
-    
-    <mat-nav-list>
-      
-      <a mat-list-item [routerLink]="['/detail']" *ngIf="true">
-        <div class="nav-menu-item">
-          <mat-icon>arrow_right</mat-icon>
-          <span class="nav-menu-text"> Inicio</span>
+      <mat-nav-list>
+        
+        <div *ngFor="let child of item.children">
+          <a mat-list-item [routerLink]="['{{child.route}}']">
+            <div class="nav-menu-item">
+              <span>{{child.title}}</span>
+            </div>
+          </a>
         </div>
-      </a>
+  
+      </mat-nav-list>
+    </mat-expansion-panel>
 
-      <a mat-list-item [routerLink]="['/detail']"*ngIf="true">
-        <div class="nav-menu-item">
-          <mat-icon>arrow_right</mat-icon>
-          <span class="nav-menu-text"> Inicio</span>
-        </div>
-      </a>
+  </div>
 
-    </mat-nav-list>
-  </mat-expansion-panel>
+  
+
+  
 
 </mat-nav-list>
