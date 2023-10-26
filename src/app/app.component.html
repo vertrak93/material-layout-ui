@@ -1,4 +1,4 @@
-<ng-container class="layout-container" >
+<ng-container class="layout-container" *ngIf="isLogged(); else unauthenticated">
 
   <app-toolbar-header class="header"></app-toolbar-header>
 
@@ -7,3 +7,9 @@
   </app-sidenav-menu>
 
 </ng-container>
+
+<ng-template #unauthenticated>
+  
+    <router-outlet></router-outlet>
+  
+</ng-template>
