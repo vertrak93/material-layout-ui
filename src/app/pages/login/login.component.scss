@@ -1,0 +1,43 @@
+@import 'src/styles.scss';
+
+.ima-login{
+    width: 120px;
+}
+
+.login-content, .card-content, .form-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.form-login{
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.card{
+    width: 320px;
+    //height: auto;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.login-title, .text-login{
+    padding-bottom: 0.8rem;
+}
+
+.login-title{
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.icon-color{
+    color: #828282;
+}
