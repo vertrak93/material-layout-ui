@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppControlService } from '../../services/app-control.service';
+import { AuthService, IUser } from '../../services/auth.service';
 
 @Component({
   selector: 'app-toolbar-header',
@@ -8,10 +9,18 @@ import { AppControlService } from '../../services/app-control.service';
 })
 export class ToolbarHeaderComponent {
 
-  constructor(private appControlSrv: AppControlService){}
+  username:string = '';
+
+  constructor(private appControlSrv: AppControlService, private authSrv: AuthService){
+    this.username = authSrv.getUser.username;
+  }
 
   toggleSideNav(){
     this.appControlSrv.toggleSideNavMenu();
+  }
+
+  logOut(){
+    this.authSrv.logOut();
   }
 
 }

@@ -11,12 +11,12 @@
             <mat-icon>account_circle</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <span disabled mat-menu-item>username</span>
+            <span disabled mat-menu-item>{{username}}</span>
             <button mat-menu-item>
               <mat-icon>settings</mat-icon>
               <span>Configuración</span>
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item (click)="logOut()">
               <mat-icon>logout</mat-icon>
               <span>Salir</span>
             </button>

@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class LoginComponent {
 
   formBuilder:FormBuilder = inject(FormBuilder);
+  authSrv:AuthService = inject(AuthService);
+
+  loginForm = this.initForm();
+  disabledLogin = false;
 
   initForm(){
     return this.formBuilder.group({
@@ -16,6 +21,29 @@ export class LoginComponent {
       password:['', [Validators.required,Validators.maxLength(50)]]
     });
   } 
+
+  submitForm(){
+    if(!this.loginForm.invalid){
+      
+      this.disabledLogin = true;
+
+      setTimeout(() => {
+        
+        this.disabledLogin = false;
+       
+        this.authSrv.logIn(this.loginForm.value.user ?? '', this.loginForm.value.password ?? '').then((res) =>{
+          if(!res){
+            console.log('error');
+          }
+        });
+
+      }, 1000);
+
+    }
+    else{
+      this.loginForm.markAsTouched();
+    }
+  }
 
 }
 

@@ -16,21 +16,45 @@
                 <span>Ingresa tu usuario y contraseña.</span>
             </div>
 
-            <form class="form-login">
+            <form class="form-login" [formGroup]="loginForm">
 
                 <mat-form-field class="full-width">
                   <mat-label>Usuario</mat-label>
-                  <input type="text" matInput placeholder="Ingrese usuario">
+                  <input type="text" matInput placeholder="Ingrese usuario" formControlName="user">
                   <mat-icon class="icon-color" matSuffix>person</mat-icon>
+                  <mat-error *ngIf="loginForm.controls.user.invalid && (loginForm.controls.user.dirty || loginForm.controls.user.touched)">
+                    <span *ngIf="loginForm.controls.user.errors?.['required']">
+                      Porfavor ingresa un usuario valido.
+                    </span>
+                    <span *ngIf="loginForm.controls.user.errors?.['maxlength'].requiredLength < loginForm.controls.user.errors?.['maxlength'].actualLength">
+                      Cadena máxima 50 caracteres
+                    </span>
+                  </mat-error>
                 </mat-form-field>
               
                 <mat-form-field class="full-width">
                   <mat-label>Contraseña</mat-label>
-                  <input type="password" matInput placeholder="Ingrese contraseña">
+                  <input type="password" matInput placeholder="Ingrese contraseña" formControlName="password">
                   <mat-icon class="icon-color" matSuffix>lock</mat-icon>
+                  <mat-error *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)">
+                    <span *ngIf="loginForm.controls.password.errors?.['required']">
+                      Porfavor ingresa un usuario valido.
+                    </span>
+                    <span *ngIf="loginForm.controls.password.errors?.['maxlength']?.requiredLength < loginForm.controls.password.errors?.['maxlength']?.actualLength">
+                      Cadena máxima 50 caracteres
+                    </span>
+                  </mat-error>
                 </mat-form-field>
 
-                <button mat-raised-button color="primary" class="full-width">Ingresar</button>
+                <button type="submit" mat-raised-button color="primary" class="full-width" (click)="submitForm()" [disabled]="disabledLogin">
+                  <span *ngIf="!disabledLogin">
+                    Ingresar
+                  </span>
+                  <mat-icon *ngIf="disabledLogin">
+                    <mat-spinner color="accent" diameter="18"></mat-spinner>
+                  </mat-icon>
+                  
+                </button>
 
               </form>
 
