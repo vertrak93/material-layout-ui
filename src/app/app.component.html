@@ -1,15 +1,10 @@
-<ng-container class="layout-container" *ngIf="isLogged(); else unauthenticated">
 
+@if(isLogged()){
   <app-toolbar-header class="header"></app-toolbar-header>
-
   <app-sidenav-menu class="sidenav">
     <router-outlet></router-outlet>
   </app-sidenav-menu>
-
-</ng-container>
-
-<ng-template #unauthenticated>
-  
-    <router-outlet></router-outlet>
-  
-</ng-template>
+}
+@else {
+  <router-outlet></router-outlet>
+}

@@ -14,6 +14,8 @@ export class LoginComponent {
 
   loginForm = this.initForm();
   disabledLogin = false;
+  showPassword = false;
+  errorLogin = false;
 
   initForm(){
     return this.formBuilder.group({
@@ -33,7 +35,7 @@ export class LoginComponent {
        
         this.authSrv.logIn(this.loginForm.value.user ?? '', this.loginForm.value.password ?? '').then((res) =>{
           if(!res){
-            console.log('error');
+            this.errorLogin = true;
           }
         });
 

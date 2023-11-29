@@ -1,6 +1,6 @@
 @import 'src/styles.scss';
 
-.ima-login{
+.img-login{
     width: 120px;
 }
 
@@ -20,8 +20,11 @@
 }
 
 .card{
-    width: 320px;
-    //height: auto;
+    width: 400px;
+}
+
+.color-white{
+    color: white !important;
 }
 
 .full-width{
@@ -39,7 +42,7 @@
 }
 
 .icon-color{
-    color: #828282;
+    color: #505050;
 }
 
 .spiner{
